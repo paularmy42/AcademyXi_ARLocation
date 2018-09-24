@@ -13,7 +13,7 @@ public class CoroutineExample : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        StartCoroutine(Fader(new Color(1f, 0.5f, 001f)));
+        StartCoroutine(Fader(Color.red));
 	}
 	
 	// Update is called once per frame
@@ -33,7 +33,7 @@ public class CoroutineExample : MonoBehaviour
 
     IEnumerator Fader(Color _targetColour)
     {
-        Color _startColour = Color.white;
+        Color _startColour = cube.GetComponent<Renderer>().material.color;
         float t = 0;
         while (t < 1f)
         {
